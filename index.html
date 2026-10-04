@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en" class="h-full bg-slate-50">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>Hostel Attendance – Smartphone-Based QR & Face Capture System</title>
+  
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              50: '#eff6ff',
+              500: '#3b82f6',
+              600: '#2563eb',
+              700: '#1d4ed8',
+              900: '#1e3a8a'
+            }
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body class="min-h-full flex flex-col bg-slate-50 text-slate-900 selection:bg-blue-500 selection:text-white">
+
+  <!-- Top Announcement / Demo Mode Alert Banner -->
+  <div class="bg-gradient-to-r from-blue-700 via-indigo-700 to-slate-900 text-white text-xs font-semibold py-2 px-4 border-b border-blue-600/30 shadow-xs">
+    <div class="max-w-7xl mx-auto flex flex-wrap items-center justify-between gap-2">
+      <div class="flex items-center gap-2">
+        <span class="px-2 py-0.5 rounded bg-emerald-500/20 border border-emerald-400/40 text-emerald-300 font-bold uppercase text-[10px] tracking-wider">
+          Demo Mode Ready
+        </span>
+        <span class="text-slate-200">Smartphone-Based Hostel Attendance Project • College Review Demo</span>
+      </div>
+      <div class="hidden sm:flex items-center gap-4 text-slate-300 text-[11px]">
+        <span>Credentials: <strong class="text-white">admin / admin123</strong></span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Header Navigation Bar -->
+  <header class="sticky top-0 z-40 bg-white/90 backdrop-blur-md border-b border-slate-200 shadow-xs">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+      <!-- Logo & Title -->
+      <a href="#landing" onclick="AppRouter.navigate('landing')" class="flex items-center gap-3 group">
+        <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-blue-600 to-indigo-600 text-white flex items-center justify-center font-bold text-lg shadow-md group-hover:scale-105 transition-transform">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v1m6 11h2m-6 0h-2v4m0-11v3m0 0h.01M12 12h4.01M16 20h4M4 12h4m12 0h.01M5 8h2a1 1 0 001-1V5a1 1 0 00-1-1H5a1 1 0 00-1 1v2a1 1 0 001 1zm12 0h2a1 1 0 001-1V5a1 1 0 00-1-1h-2a1 1 0 00-1 1v2a1 1 0 001 1zM5 20h2a1 1 0 001-1v-2a1 1 0 00-1-1H5a1 1 0 00-1 1v2a1 1 0 001 1z"/></svg>
+        </div>
+        <div>
+          <span class="font-extrabold text-base md:text-lg text-slate-900 tracking-tight block leading-none">Hostel Attendance</span>
+          <span class="text-[10px] text-slate-500 font-semibold tracking-wider uppercase block mt-1">Smartphone QR & Face Capture</span>
+        </div>
+      </a>
+
+      <!-- Navbar Route Buttons -->
+      <nav id="navbar-links" class="flex items-center gap-2"></nav>
+    </div>
+  </header>
+
+  <!-- Main View Router Container -->
+  <main class="flex-1 max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8 pt-6">
+    <div id="app-content"></div>
+  </main>
+
+  <!-- Project Security & Academic Privacy Footer -->
+  <footer class="mt-auto border-t border-slate-200 bg-white py-6 text-slate-500 text-xs">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-2">
+      <p class="font-medium text-slate-600">
+        “Demo system for academic project purposes. Face images are captured locally for demonstration and are not uploaded to an external server.”
+      </p>
+      <p class="text-slate-400 text-[11px]">
+        Hostel Attendance System • ECE Smartphone-Based Attendance Project
+      </p>
+    </div>
+  </footer>
+
+  <!-- Standalone Libraries & Application Scripts -->
+  <script src="lib/qrcode.min.js"></script>
+  <script src="lib/jsqr.js"></script>
+  <script src="js/storage.js"></script>
+  <script src="js/csvExport.js"></script>
+  <script src="js/qr.js"></script>
+  <script src="js/camera.js"></script>
+  
+  <!-- Views -->
+  <script src="js/views/landing.js"></script>
+  <script src="js/views/studentLogin.js"></script>
+  <script src="js/views/studentDashboard.js"></script>
+  <script src="js/views/attendanceFlow.js"></script>
+  <script src="js/views/adminLogin.js"></script>
+  <script src="js/views/adminDashboard.js"></script>
+
+  <!-- Router Initialization -->
+  <script src="js/app.js"></script>
+</body>
+</html>
